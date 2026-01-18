@@ -16,3 +16,10 @@ Core ideas behind agentic engineering: how agents differ from chatbots, what "to
 - Tool use and orchestration
 - Memory, state, and long-running workflows
 - Context engineering and guardrails
+
+<div class="section-label">Related</div>
+<div class="link-row">
+  <a class="link-pill" href="{{ site.baseurl }}/en/techniques/">Techniques</a>
+  <a class="link-pill" href="{{ site.baseurl }}/en/templates/">Templates</a>
+  <a class="link-pill" href="{{ site.baseurl }}/en/getting-started/">Getting Started</a>
+</div>

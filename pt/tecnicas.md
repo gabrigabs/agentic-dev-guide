@@ -16,3 +16,10 @@ Práticas para manter sistemas agênticos confiáveis e previsíveis.
 - Guardrails e checagens de segurança
 - Avaliações e testes de regressão
 - Observabilidade e sinais de feedback
+
+<div class="section-label">Relacionados</div>
+<div class="link-row">
+  <a class="link-pill" href="{{ site.baseurl }}/pt/conceitos/">Conceitos</a>
+  <a class="link-pill" href="{{ site.baseurl }}/pt/modelos/">Modelos</a>
+  <a class="link-pill" href="{{ site.baseurl }}/pt/comecando/">Começando</a>
+</div>

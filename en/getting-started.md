@@ -19,3 +19,10 @@ This guide is organized like a product wiki: start with the mental model, then d
 ## Contributing
 
 If you want to extend the guide, jump to [Contributing]({{ site.baseurl }}/en/contributing/).
+
+<div class="section-label">Next steps</div>
+<div class="link-row">
+  <a class="link-pill" href="{{ site.baseurl }}/en/concepts/">Concepts</a>
+  <a class="link-pill" href="{{ site.baseurl }}/en/techniques/">Techniques</a>
+  <a class="link-pill" href="{{ site.baseurl }}/en/templates/">Templates</a>
+</div>

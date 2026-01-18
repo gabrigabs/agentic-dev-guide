@@ -10,4 +10,7 @@ permalink: /pt/tutoriais/
 
 Passo a passo para construir sistemas agênticos. Em breve.
 
-Se quiser contribuir, veja [Contribuindo]({{ site.baseurl }}/pt/contribuindo/).
+<div class="section-label">Contribua</div>
+<div class="link-row">
+  <a class="link-pill" href="{{ site.baseurl }}/pt/contribuindo/">Como contribuir</a>
+</div>

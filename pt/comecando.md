@@ -19,3 +19,10 @@ Este guia é organizado como um wiki de produto: primeiro o modelo mental, depoi
 ## Contribuindo
 
 Se quiser evoluir o guia, veja [Contribuindo]({{ site.baseurl }}/pt/contribuindo/).
+
+<div class="section-label">Próximos passos</div>
+<div class="link-row">
+  <a class="link-pill" href="{{ site.baseurl }}/pt/conceitos/">Conceitos</a>
+  <a class="link-pill" href="{{ site.baseurl }}/pt/tecnicas/">Técnicas</a>
+  <a class="link-pill" href="{{ site.baseurl }}/pt/modelos/">Modelos</a>
+</div>
