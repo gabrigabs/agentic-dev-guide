@@ -1,5 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
-
 // === DESIGN TOKENS ===
 $atlas-bg: #f5f1e8;
 $atlas-sidebar: #efe9dd;
@@ -15,9 +13,9 @@ $radius-lg: 12px;
 
 // === TYPOGRAPHY ===
 body {
-  font-family: "Inter", system-ui, -apple-system, sans-serif;
-  background: linear-gradient(180deg, #f6f2ea 0%, #fbf7f1 45%, #ffffff 100%);
-  color: $atlas-text;
+  font-family: "Inter", system-ui, -apple-system, sans-serif !important;
+  background: linear-gradient(180deg, #f6f2ea 0%, #fbf7f1 45%, #ffffff 100%) !important;
+  color: $atlas-text !important;
   letter-spacing: -0.01em;
 }
 
@@ -27,39 +25,48 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Inter", system-ui, sans-serif;
-  font-weight: 600;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-weight: 600 !important;
   letter-spacing: -0.02em;
-  color: $atlas-heading;
+  color: $atlas-heading !important;
 }
 
 // === HEADER ===
 .site-header {
-  background-color: $atlas-sidebar;
-  border-bottom: none;
+  background-color: $atlas-sidebar !important;
+  border-bottom: none !important;
+  height: 60px !important; // Enforce consistent height
+  display: flex;
+  align-items: center;
 }
 
 .site-title {
-  font-family: "Inter", system-ui, sans-serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: $atlas-heading;
+  font-family: "Inter", system-ui, sans-serif !important;
+  font-size: 1rem !important;
+  font-weight: 700 !important;
+  color: $atlas-heading !important;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.04em !important;
+  height: auto !important;
+  line-height: 1 !important;
+  background-image: none !important; // Override theme gradient
 }
 
 .site-logo {
-  background: transparent;
+  background-image: none !important; // Remove theme logo handling if conflicting
+  height: 32px !important;
+  width: auto !important;
+  max-height: 100%;
 }
 
 // === SIDEBAR ===
 .side-bar {
-  background: $atlas-sidebar;
-  border-right: none;
+  background-color: $atlas-sidebar !important;
+  border-right: none !important;
 }
 
 .site-nav {
-  border: none;
+  margin-top: 1rem;
 }
 
 .nav-list .nav-list-link {
@@ -68,12 +75,12 @@ h6 {
   margin: 2px 4px;
   transition: all 0.15s ease;
   color: $atlas-text;
-}
 
-.nav-list .nav-list-link:hover {
-  background: $atlas-accent-light;
-  color: $atlas-accent;
-  text-decoration: none;
+  &:hover {
+    background: $atlas-accent-light;
+    color: $atlas-accent;
+    text-decoration: none;
+  }
 }
 
 .nav-list .nav-list-item.active>.nav-list-link {
@@ -82,56 +89,76 @@ h6 {
 }
 
 // === AUX NAV (Header Buttons) ===
-.aux-nav .aux-nav-list-item a {
-  background: transparent;
-  border: 1px solid $atlas-border;
-  border-radius: $radius-sm;
-  padding: 6px 14px;
-  font-size: 13px;
-  font-weight: 500;
-  color: $atlas-text;
-  transition: all 0.15s ease;
-  text-decoration: none;
+.aux-nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
-.aux-nav .aux-nav-list-item a:hover {
-  background: $atlas-accent-light;
-  border-color: $atlas-accent;
-  color: $atlas-accent;
+.aux-nav .aux-nav-list-item {
+  display: inline-flex;
+  align-items: center;
+  height: 100%;
+}
+
+.aux-nav .aux-nav-list-item a {
+  background: transparent !important;
+  border: 1px solid $atlas-border !important;
+  border-radius: $radius-sm !important;
+  padding: 6px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  color: $atlas-text !important;
+  transition: all 0.15s ease !important;
+  text-decoration: none !important;
+  display: inline-flex !important;
+  align-items: center;
+  height: auto !important;
+  line-height: normal !important;
+
+  &:hover {
+    background: $atlas-accent-light !important;
+    border-color: $atlas-accent !important;
+    color: $atlas-accent !important;
+  }
 }
 
 // === SEARCH ===
 .search {
-  border: none;
+  border: none !important;
+  margin-right: 1rem;
 }
 
 .search-input {
-  border: 1px solid $atlas-border;
-  border-radius: $radius-md;
-  background: white;
-  box-shadow: none;
+  border: 1px solid $atlas-border !important;
+  border-radius: $radius-md !important;
+  background: white !important;
+  box-shadow: none !important;
+  padding: 6px 12px !important;
+  font-size: 13px !important;
+  height: 34px !important; // Match button height approx
 
   &:focus {
-    border-color: $atlas-accent;
-    box-shadow: 0 0 0 3px $atlas-accent-light;
+    border-color: $atlas-accent !important;
+    box-shadow: 0 0 0 3px $atlas-accent-light !important;
   }
 }
 
 // === MAIN CONTENT ===
 .main-content {
-  background: #fffdf8;
-  border: none;
-  border-radius: $radius-lg;
-  box-shadow: 0 12px 32px rgba(28, 22, 15, 0.1);
-  margin: 1.5rem 1.25rem;
-  padding: 2rem 2.25rem;
+  background: #fffdf8 !important;
+  border: none !important;
+  border-radius: $radius-lg !important;
+  box-shadow: 0 12px 32px rgba(28, 22, 15, 0.1) !important;
+  margin: 1.5rem 1.25rem !important;
+  padding: 2rem 2.25rem !important;
 }
 
 @media (max-width: 50rem) {
   .main-content {
-    margin: 1rem 0.75rem;
-    padding: 1.5rem 1.25rem;
-    border-radius: $radius-md;
+    margin: 1rem 0.75rem !important;
+    padding: 1.5rem 1.25rem !important;
+    border-radius: $radius-md !important;
   }
 }
 
@@ -229,6 +256,8 @@ h6 {
 // === LANGUAGE TOGGLE ===
 .lang-toggle-wrapper {
   margin-right: 8px;
+  display: flex;
+  align-items: center;
 }
 
 .lang-toggle {
@@ -241,38 +270,54 @@ h6 {
   padding: 2px;
 
   a {
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 12px;
-    font-weight: 600;
-    color: $atlas-muted;
-    text-decoration: none;
-    transition: all 0.15s ease;
-    border: none;
-    background: transparent;
+    padding: 5px 10px !important;
+    border-radius: 4px !important;
+    font-size: 12px !important;
+    font-weight: 600 !important;
+    color: $atlas-muted !important;
+    text-decoration: none !important;
+    transition: all 0.15s ease !important;
+    border: none !important;
+    background: transparent !important;
+    line-height: 1 !important;
+    height: auto !important;
 
     &:hover {
-      color: $atlas-text;
+      color: $atlas-text !important;
     }
 
     &.active {
-      background: white;
-      color: $atlas-heading;
-      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      background: white !important;
+      color: $atlas-heading !important;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08) !important;
     }
   }
 }
 
 // === LANGUAGE FILTERING ===
-.lang-parent-hidden>.nav-list-link,
-.lang-parent-hidden>.nav-list-expander {
-  display: none;
+// Specifically target the parent link and expander to hide them, 
+// BUT allow the UL (children) to remain visible
+.lang-parent-hidden {
+  // We cannot display:none the LI because it contains the children
+  // So we try to visually remove the label part
+
+  // Hide the direct link (the text "English" or "Português")
+  >.nav-list-link {
+    display: none !important;
+  }
+
+  // Hide the expander button if present
+  >.nav-list-expander {
+    display: none !important;
+  }
 }
 
 .lang-parent-hidden>.nav-list {
-  padding-left: 0;
+  display: block !important;
+  padding-left: 0 !important;
+  margin-top: 0 !important;
 }
 
 .nav-list-item.lang-hidden {
-  display: none;
+  display: none !important;
 }
