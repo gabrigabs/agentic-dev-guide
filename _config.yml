@@ -1,0 +1,14 @@
+title: Agentic Dev Guide
+description: Guidance for the new era of Agentic AI Engineering. Patterns, strategies, and best practices.
+remote_theme: just-the-docs/just-the-docs
+
+color_scheme: dark
+
+search_enabled: true
+heading_anchors: true
+
+aux_links:
+  "GitHub Repository":
+    - "//github.com/gabrigabs/agentic-dev-guide"
+
+footer_content: "Copyright &copy; 2026 Agentic Dev Guide Contributors"

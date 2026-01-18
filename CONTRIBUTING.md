@@ -1,6 +1,13 @@
+---
+layout: default
+title: Contributing
+nav_order: 2
+---
+
 # Contributing to the Agentic Development Guide
 
-Thanks for contributing! To maintain quality in this open-source repository, please follow these guidelines:
+
+Thanks for contributing! To maintain quality in this open-source repository, please follow these guidelines and our [Code of Conduct](CODE_OF_CONDUCT.md).
 
 ## Language Structure
 

@@ -1,3 +1,9 @@
+---
+layout: home
+title: Home
+nav_order: 1
+---
+
 # Agentic Development Guide 🤖
 
 > **[🇧🇷 Português](README.pt.md)** | **[🇺🇸 English](README.md)**
@@ -5,6 +11,11 @@
 A comprehensive, open-source guide to AI engineering and agentic software development. This repository collects concepts, techniques, agents, and skills to help you build better AI-assisted software.
 
 ## 📚 What's Inside?
+
+## Community
+
+*   [Contributing](CONTRIBUTING.md)
+*   [Code of Conduct](CODE_OF_CONDUCT.md)
 
 ### [Concepts](concepts/)
 Fundamental theory about Agents, Tools, Memory, and Context Engineering.

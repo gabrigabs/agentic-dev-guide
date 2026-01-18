@@ -1,3 +1,9 @@
+---
+layout: default
+title: Início (PT)
+nav_order: 4
+---
+
 # Guia de Desenvolvimento Agêntico 🤖
 
 > **[🇧🇷 Português](README.pt.md)** | **[🇺🇸 English](README.md)**
