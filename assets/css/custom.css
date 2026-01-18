@@ -30,6 +30,18 @@ body {
 /* Fix header title color */
 .site-title {
     color: var(--atlas-heading) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* Fix logo container background (remove green) */
+.site-logo {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+.site-header .site-button {
+    background: transparent !important;
 }
 
 /* --- AUX LINKS (Header Buttons) --- */
@@ -43,6 +55,7 @@ body {
     color: var(--atlas-text) !important;
     transition: all 0.15s ease !important;
     text-decoration: none !important;
+    display: inline-block !important;
 }
 
 .aux-nav .aux-nav-list-item a:hover {

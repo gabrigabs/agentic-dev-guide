@@ -7,6 +7,10 @@
         const isPt = path.includes("/pt/") || path.endsWith("/pt");
         const currentLang = isPt ? "pt" : "en";
 
+        // Get baseurl from current path
+        const pathParts = path.split('/');
+        const baseurl = '/' + pathParts[1]; // e.g., /agentic-dev-guide
+
         // 2. Filter Sidebar Items
         const navItems = document.querySelectorAll('.nav-list-item');
         navItems.forEach(item => {
@@ -28,33 +32,16 @@
         // 3. Create Language Toggle in Header
         const auxNav = document.querySelector('.aux-nav-list');
         if (auxNav) {
-            // Find and remove old English/Português links
-            const oldLinks = auxNav.querySelectorAll('.aux-nav-list-item');
-            oldLinks.forEach(li => {
-                const a = li.querySelector('a');
-                if (a && (a.textContent.includes('English') || a.textContent.includes('Português'))) {
-                    li.remove();
-                }
-            });
-
-            // Create new toggle
+            // Create new toggle as first item
             const toggle = document.createElement('li');
-            toggle.className = 'aux-nav-list-item';
+            toggle.className = 'aux-nav-list-item lang-toggle-wrapper';
             toggle.innerHTML = `
             <div class="lang-toggle">
-                <a href="{{ site.baseurl }}/en/" class="${currentLang === 'en' ? 'active' : ''}">EN</a>
-                <a href="{{ site.baseurl }}/pt/" class="${currentLang === 'pt' ? 'active' : ''}">PT</a>
+                <a href="${baseurl}/en/" class="${currentLang === 'en' ? 'active' : ''}">EN</a>
+                <a href="${baseurl}/pt/" class="${currentLang === 'pt' ? 'active' : ''}">PT</a>
             </div>
         `;
             auxNav.insertBefore(toggle, auxNav.firstChild);
         }
-
-        // 4. Highlight active aux link
-        const auxLinks = document.querySelectorAll('.aux-nav-list-item a');
-        auxLinks.forEach(link => {
-            if (link.href === window.location.href) {
-                link.classList.add('lang-active');
-            }
-        });
     });
 </script>
