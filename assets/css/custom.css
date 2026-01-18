@@ -23,8 +23,8 @@ body {
 /* --- HEADER (Warm & Premium) --- */
 .site-header {
     background-color: var(--atlas-sidebar) !important;
-    border-bottom: 1px solid var(--atlas-border) !important;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    border-bottom: none !important;
+    box-shadow: none !important;
 }
 
 /* Fix header title color */
@@ -61,6 +61,28 @@ body {
 /* --- SIDEBAR (Clean) --- */
 .site-nav {
     border-right: none !important;
+    border: none !important;
+}
+
+/* Remove ALL separator borders */
+.main-content-wrap,
+.side-bar,
+.main,
+.main-content {
+    border: none !important;
+    box-shadow: none !important;
+}
+
+/* Remove border from main wrapper */
+@media (min-width: 50rem) {
+    .side-bar {
+        border-right: none !important;
+    }
+}
+
+/* Search container border removal */
+.search {
+    border: none !important;
 }
 
 .nav-list .nav-list-item .nav-list-link {
