@@ -1,23 +1,20 @@
-<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
-
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         const path = window.location.pathname;
         const isPt = path.includes("/pt/") || path.endsWith("/pt");
         const currentLang = isPt ? "pt" : "en";
-
         const pathParts = path.split('/');
         const baseurl = '/' + pathParts[1];
 
-        const navItems = document.querySelectorAll('.nav-list-item');
-        navItems.forEach(item => {
+        document.querySelectorAll('.nav-list-item').forEach(item => {
             const link = item.querySelector('.nav-list-link');
             if (!link) return;
+
             const href = link.getAttribute('href') || '';
             const text = link.textContent.trim().toLowerCase();
 
             if (text === 'english' || text === 'português') {
-                item.classList.add('lang-hidden');
+                item.classList.add('lang-parent-hidden');
                 return;
             }
 
@@ -25,9 +22,8 @@
             if (href.includes("/pt/") || href.endsWith("/pt")) itemLang = "pt";
             else if (href.includes("/en/") || href.endsWith("/en")) itemLang = "en";
 
-            if (currentLang === "pt" && itemLang === "en") {
-                item.classList.add('lang-hidden');
-            } else if (currentLang === "en" && itemLang === "pt") {
+            if ((currentLang === "pt" && itemLang === "en") ||
+                (currentLang === "en" && itemLang === "pt")) {
                 item.classList.add('lang-hidden');
             }
         });
