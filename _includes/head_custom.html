@@ -1,44 +1,118 @@
 <script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const path = window.location.pathname;
-        const isPt = path.includes("/pt/") || path.endsWith("/pt");
-        const currentLang = isPt ? "pt" : "en";
-        const pathParts = path.split('/');
-        const baseurl = '/' + pathParts[1];
+    (function () {
+        /* Language configuration */
+        var LANGUAGES = [
+            { code: 'en', label: 'English', basePath: '/agentic-dev-guide/en/' },
+            { code: 'pt', label: 'Português', basePath: '/agentic-dev-guide/pt/' }
+        ];
 
-        document.querySelectorAll('.nav-list-item').forEach(item => {
-            const link = item.querySelector('.nav-list-link');
-            if (!link) return;
-
-            const href = link.getAttribute('href') || '';
-            const text = link.textContent.trim().toLowerCase();
-
-            if (text === 'english' || text === 'português') {
-                item.classList.add('lang-parent-hidden');
-                return;
+        function detectCurrentLanguage(path) {
+            for (var i = 0; i < LANGUAGES.length; i++) {
+                var lang = LANGUAGES[i];
+                if (path.indexOf(lang.basePath) === 0) {
+                    return lang;
+                }
             }
-
-            let itemLang = "common";
-            if (href.includes("/pt/") || href.endsWith("/pt")) itemLang = "pt";
-            else if (href.includes("/en/") || href.endsWith("/en")) itemLang = "en";
-
-            if ((currentLang === "pt" && itemLang === "en") ||
-                (currentLang === "en" && itemLang === "pt")) {
-                item.classList.add('lang-hidden');
-            }
-        });
-
-        const auxNav = document.querySelector('.aux-nav-list');
-        if (auxNav) {
-            const toggle = document.createElement('li');
-            toggle.className = 'aux-nav-list-item lang-toggle-wrapper';
-            toggle.innerHTML = `
-            <div class="lang-toggle">
-                <a href="${baseurl}/en/" class="${currentLang === 'en' ? 'active' : ''}">EN</a>
-                <a href="${baseurl}/pt/" class="${currentLang === 'pt' ? 'active' : ''}">PT</a>
-            </div>
-        `;
-            auxNav.insertBefore(toggle, auxNav.firstChild);
+            /* Default to first language for root pages */
+            return LANGUAGES[0];
         }
-    });
+
+        function setupLanguageSelector(currentLang) {
+            var auxNav = document.querySelector(".aux-nav-list");
+            if (!auxNav) return;
+
+            /* Check if selector already exists */
+            if (document.getElementById("lang-select")) return;
+
+            var wrapper = document.createElement("li");
+            wrapper.className = "aux-nav-list-item lang-select-wrapper";
+
+            var label = document.createElement("label");
+            label.className = "lang-select-label";
+            label.setAttribute("for", "lang-select");
+            label.textContent = "Language";
+
+            var select = document.createElement("select");
+            select.className = "lang-select";
+            select.id = "lang-select";
+            select.setAttribute("aria-label", "Select language");
+
+            for (var i = 0; i < LANGUAGES.length; i++) {
+                var lang = LANGUAGES[i];
+                var option = document.createElement("option");
+                option.value = lang.basePath;
+                option.textContent = lang.label;
+                if (lang.code === currentLang.code) {
+                    option.selected = true;
+                }
+                select.appendChild(option);
+            }
+
+            select.addEventListener("change", function (event) {
+                var newPath = event.target.value;
+                if (newPath) {
+                    window.location.href = newPath;
+                }
+            });
+
+            wrapper.appendChild(label);
+            wrapper.appendChild(select);
+            auxNav.insertBefore(wrapper, auxNav.firstChild);
+        }
+
+        function setupSidebar(currentLang) {
+            /* Find all top-level nav items (language sections) */
+            var topItems = document.querySelectorAll(".site-nav > .nav-list > .nav-list-item");
+
+            for (var i = 0; i < topItems.length; i++) {
+                var item = topItems[i];
+                var link = item.querySelector(".nav-list-link");
+                if (!link) continue;
+
+                var href = link.getAttribute("href") || "";
+                var linkText = link.textContent.trim();
+                var isCurrentLang = false;
+
+                /* Check if this item matches the current language */
+                for (var j = 0; j < LANGUAGES.length; j++) {
+                    var lang = LANGUAGES[j];
+                    /* Match by href OR by link text (for active links without href) */
+                    var matchesHref = href === lang.basePath || href.indexOf(lang.basePath) === 0;
+                    var matchesText = linkText === lang.label;
+
+                    if (matchesHref || matchesText) {
+                        if (lang.code === currentLang.code) {
+                            isCurrentLang = true;
+                        }
+                        break;
+                    }
+                }
+
+                if (isCurrentLang) {
+                    /* Current language: hide parent link/expander, show children directly */
+                    item.classList.add("lang-parent-hidden");
+                    item.classList.remove("lang-hidden");
+                } else {
+                    /* Other languages: hide completely */
+                    item.classList.add("lang-hidden");
+                    item.classList.remove("lang-parent-hidden");
+                }
+            }
+        }
+
+        function init() {
+            var path = window.location.pathname;
+            var currentLang = detectCurrentLanguage(path);
+
+            setupLanguageSelector(currentLang);
+            setupSidebar(currentLang);
+        }
+
+        /* Run on DOM ready */
+        if (document.readyState === "loading") {
+            document.addEventListener("DOMContentLoaded", init);
+        } else {
+            init();
+        }
+    })();
 </script>
