@@ -1,6 +1,8 @@
 title: Agentic Dev Guide
 description: Guidance for the new era of Agentic AI Engineering. Patterns, strategies, and best practices.
 remote_theme: just-the-docs/just-the-docs
+url: "https://gabrigabs.github.io"
+baseurl: "/agentic-dev-guide"
 
 color_scheme: dark
 
