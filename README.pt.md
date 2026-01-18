@@ -2,13 +2,14 @@
 layout: default
 title: Início (PT)
 nav_order: 4
+nav_exclude: true
 ---
 
 # Guia de Desenvolvimento Agêntico 🤖
 
 > **[🇧🇷 Português](README.pt.md)** | **[🇺🇸 English](README.md)**
 
-Um guia abrangente e open-source sobre engenharia de IA e desenvolvimento de software agêntico. Este repositório reúne conceitos, técnicas, agentes e skills para ajudar você a construir software melhor com auxílio de IA.
+Um guia abrangente e open-source sobre engenharia de IA e desenvolvimento de software agêntico. Este repositório reúne conceitos, técnicas e modelos para ajudar você a construir software melhor com auxílio de IA.
 
 ## 📚 O que tem dentro?
 
@@ -20,11 +21,6 @@ Teoria fundamental sobre Agentes, Ferramentas, Memória e Engenharia de Contexto
 Técnicas práticas de engenharia.
 *Engenharia de Prompt, Guardrails, Evals e Observabilidade.*
 
-### [Catálogo](catalog/)
-Componentes reutilizáveis para seus agentes (**Apenas em Inglês** para melhor performance com LLMs).
-- **[Agents](catalog/agents/)**: Definições baseadas em papéis (Planner, Implementer, Reviewer).
-- **[Skills](catalog/skills/)**: Capacidades modulares (Security Review, Code Analysis).
-
 ### [Templates](templates/)
 Modelos prontos para copiar e colar.
 *ADRs, Planos de Tarefa, descrições de PR.*
@@ -32,8 +28,7 @@ Modelos prontos para copiar e colar.
 ## 🚀 Começando
 
 1.  Leia os **[Conceitos Fundamentais](concepts/core-concepts.pt.md)**.
-2.  Explore o **[Catálogo de Agentes](catalog/agents/)**.
-3.  Use os **[Templates](templates/)** no seu próximo projeto.
+2.  Use os **[Templates](templates/)** no seu próximo projeto.
 
 ## 🤝 Contribuindo
 

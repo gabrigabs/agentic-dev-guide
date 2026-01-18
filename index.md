@@ -2,9 +2,12 @@
 title: Agentic Dev Guide
 layout: home
 permalink: /
-nav_order: 1
+nav_exclude: true
 ---
 
-Guidance for the new era of Agentic AI Engineering. Patterns, strategies, and best practices.
+# Agentic Dev Guide
 
-[Get started with the catalog]({{ site.baseurl }}/catalog/)
+Guidance for the new era of Agentic AI Engineering. Choose your language to get started.
+
+- [English documentation]({{ site.baseurl }}/en/)
+- [Documentacao em Portugues]({{ site.baseurl }}/pt/)

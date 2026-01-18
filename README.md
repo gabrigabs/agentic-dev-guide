@@ -2,13 +2,14 @@
 layout: home
 title: Home
 nav_order: 1
+nav_exclude: true
 ---
 
 # Agentic Development Guide 🤖
 
 > **[🇧🇷 Português](README.pt.md)** | **[🇺🇸 English](README.md)**
 
-A comprehensive, open-source guide to AI engineering and agentic software development. This repository collects concepts, techniques, agents, and skills to help you build better AI-assisted software.
+A comprehensive, open-source guide to AI engineering and agentic software development. This repository collects concepts, techniques, and templates to help you build better AI-assisted software.
 
 ## 📚 What's Inside?
 
@@ -25,11 +26,6 @@ Fundamental theory about Agents, Tools, Memory, and Context Engineering.
 Practical engineering techniques.
 *Prompt Engineering, Guardrails, Evals, and Observability.*
 
-### [Catalog](catalog/)
-Reusable components for your agents (English only).
-- **[Agents](catalog/agents/)**: Role-based definitions (Planner, Implementer, Reviewer).
-- **[Skills](catalog/skills/)**: Modular capabilities (Security Review, Code Analysis).
-
 ### [Templates](templates/)
 Copy-paste templates for your projects.
 *ADRs, Task Plans, Pull Request descriptions.*
@@ -37,8 +33,7 @@ Copy-paste templates for your projects.
 ## 🚀 Getting Started
 
 1.  Read the **[Core Concepts](concepts/core-concepts.en.md)**.
-2.  Explore the **[Agents Catalog](catalog/agents/)**.
-3.  Use the **[Templates](templates/)** in your next project.
+2.  Use the **[Templates](templates/)** in your next project.
 
 ## 🤝 Contributing
 

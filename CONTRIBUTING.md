@@ -2,6 +2,7 @@
 layout: default
 title: Contributing
 nav_order: 2
+nav_exclude: true
 ---
 
 # Contributing to the Agentic Development Guide
@@ -12,7 +13,6 @@ Thanks for contributing! To maintain quality in this open-source repository, ple
 ## Language Structure
 
 - **Concepts & Techniques**: We maintain English (`.en.md`) and Portuguese (`.pt.md`) versions. If you change one, please try to update the other or open an issue for translation.
-- **Catalog (Agents & Skills)**: **English Only**. This ensures optimal performance when these files are consumed by LLMs.
 
 ## Adding Content
 
@@ -20,17 +20,6 @@ Thanks for contributing! To maintain quality in this open-source repository, ple
 - Use language suffixes: `filename.en.md` (or `.pt.md`).
 - Use standard Markdown.
 - Avoid "synthetic citations" (hallucinated sources); use real links.
-
-### Agents (`catalog/agents/`)
-- Use English.
-- Use `.md` extension (e.g., `planner.agent.md`).
-- Follow the YAML frontmatter pattern with `name`, `description`, `tools`, `model`, `handoffs`.
-
-### Skills (`catalog/skills/`)
-- Use English.
-- Create a folder in `catalog/skills/` (e.g., `security-review/`).
-- Main file must be `SKILL.md` with minimal frontmatter.
-- Keep descriptions concise; use `references/` for long details.
 
 ## Pull Requests
 

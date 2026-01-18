@@ -10,6 +10,10 @@ search_enabled: true
 heading_anchors: true
 
 aux_links:
+  "English":
+    - "/agentic-dev-guide/en/"
+  "Português":
+    - "/agentic-dev-guide/pt/"
   "GitHub Repository":
     - "//github.com/gabrigabs/agentic-dev-guide"
 

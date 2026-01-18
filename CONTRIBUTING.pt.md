@@ -1,3 +1,9 @@
+---
+layout: default
+title: Contribuindo
+nav_exclude: true
+---
+
 # Contribuindo para o Guia de Desenvolvimento Agêntico
 
 Obrigado por considerar contribuir! Para manter a qualidade deste repositório open-source, siga estas diretrizes:
@@ -5,7 +11,6 @@ Obrigado por considerar contribuir! Para manter a qualidade deste repositório o
 ## Estrutura de Idiomas
 
 - **Conceitos e Técnicas**: Mantemos versões em Inglês (`.en.md`) e Português (`.pt.md`). Se alterar um, por favor tente atualizar o outro ou abra uma issue para tradução.
-- **Catálogo (Agentes e Skills)**: **Apenas em Inglês**. Isso garante melhor performance quando esses arquivos são lidos por LLMs.
 
 ## Adicionando Conteúdo
 
@@ -13,17 +18,6 @@ Obrigado por considerar contribuir! Para manter a qualidade deste repositório o
 - Crie arquivos com sufixo de idioma: `nome-do-arquivo.pt.md` (ou `.en.md`).
 - Use Markdown padrão.
 - Evite "citações sintéticas" (inventar fontes); use links reais.
-
-### Agentes (`catalog/agents/`)
-- Use inglês.
-- Extensão `.md` (ex: `planner.agent.md`).
-- Siga o padrão de frontmatter YAML com `name`, `description`, `tools`, `model`, `handoffs`.
-
-### Skills (`catalog/skills/`)
-- Use inglês.
-- Crie uma pasta em `catalog/skills/` (ex: `security-review/`).
-- O arquivo principal deve ser `SKILL.md` com frontmatter mínimo.
-- Mantenha descrições curtas e use `references/` para detalhes longos.
 
 ## Pull Requests
 
