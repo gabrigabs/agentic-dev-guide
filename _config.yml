@@ -16,11 +16,7 @@ back_to_top: true
 back_to_top_text: "Back to top"
 
 aux_links:
-  "English":
-    - "/agentic-dev-guide/en/"
-  "Português":
-    - "/agentic-dev-guide/pt/"
-  "GitHub Repository":
+  "GitHub":
     - "//github.com/gabrigabs/agentic-dev-guide"
 
 footer_content: "Copyright &copy; 2026 Agentic Dev Guide Contributors"

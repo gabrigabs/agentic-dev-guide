@@ -1,32 +1,59 @@
 <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
 
-<!-- assets/js/language-toggle.js -->
 <script>
     document.addEventListener("DOMContentLoaded", function () {
         // 1. Determine Current Language
         const path = window.location.pathname;
-        const isPt = path.includes("/pt/") || path.includes("/pt");
+        const isPt = path.includes("/pt/") || path.endsWith("/pt");
         const currentLang = isPt ? "pt" : "en";
 
         // 2. Filter Sidebar Items
         const navItems = document.querySelectorAll('.nav-list-item');
-
         navItems.forEach(item => {
             const link = item.querySelector('.nav-list-link');
             if (!link) return;
+            const href = link.getAttribute('href') || '';
 
-            const href = link.getAttribute('href');
-
-            // Simple heuristic: if link contains /pt/, it's PT. If /en/, it's EN.
             let itemLang = "common";
-            if (href && href.includes("/pt/") || href && href.includes("/pt")) itemLang = "pt";
-            else if (href && href.includes("/en/") || href && href.includes("/en")) itemLang = "en";
+            if (href.includes("/pt/") || href.endsWith("/pt")) itemLang = "pt";
+            else if (href.includes("/en/") || href.endsWith("/en")) itemLang = "en";
 
-            // Hide items not matching current language
             if (currentLang === "pt" && itemLang === "en") {
                 item.classList.add('lang-hidden');
             } else if (currentLang === "en" && itemLang === "pt") {
                 item.classList.add('lang-hidden');
+            }
+        });
+
+        // 3. Create Language Toggle in Header
+        const auxNav = document.querySelector('.aux-nav-list');
+        if (auxNav) {
+            // Find and remove old English/Português links
+            const oldLinks = auxNav.querySelectorAll('.aux-nav-list-item');
+            oldLinks.forEach(li => {
+                const a = li.querySelector('a');
+                if (a && (a.textContent.includes('English') || a.textContent.includes('Português'))) {
+                    li.remove();
+                }
+            });
+
+            // Create new toggle
+            const toggle = document.createElement('li');
+            toggle.className = 'aux-nav-list-item';
+            toggle.innerHTML = `
+            <div class="lang-toggle">
+                <a href="{{ site.baseurl }}/en/" class="${currentLang === 'en' ? 'active' : ''}">EN</a>
+                <a href="{{ site.baseurl }}/pt/" class="${currentLang === 'pt' ? 'active' : ''}">PT</a>
+            </div>
+        `;
+            auxNav.insertBefore(toggle, auxNav.firstChild);
+        }
+
+        // 4. Highlight active aux link
+        const auxLinks = document.querySelectorAll('.aux-nav-list-item a');
+        auxLinks.forEach(link => {
+            if (link.href === window.location.href) {
+                link.classList.add('lang-active');
             }
         });
     });

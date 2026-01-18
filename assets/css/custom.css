@@ -1,59 +1,160 @@
-/* assets/css/custom.css */
+/* assets/css/custom.css - Atlas Premium Theme */
 
 /* --- TYPOGRAPHY --- */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --atlas-bg: #f5f1e8;
+    --atlas-sidebar: #efe9dd;
+    --atlas-border: #e1d7c7;
+    --atlas-text: #1f1b16;
+    --atlas-heading: #16130f;
+    --atlas-accent: #8B5A2B;
+    /* Warm brown instead of green */
+    --atlas-accent-light: rgba(139, 90, 43, 0.1);
+    --atlas-muted: #6a6156;
+}
 
 body {
     font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
     letter-spacing: -0.01em;
 }
 
-/* --- HEADER (Glassmorphism) --- */
+/* --- HEADER (Warm & Premium) --- */
 .site-header {
-    background-color: rgba(11, 106, 102, 0.85) !important;
-    /* Theme color with opacity */
-    backdrop-filter: blur(12px) saturate(180%);
-    -webkit-backdrop-filter: blur(12px) saturate(180%);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    background-color: var(--atlas-sidebar) !important;
+    border-bottom: 1px solid var(--atlas-border) !important;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
 }
 
-/* --- SIDEBAR (Premium Feel) --- */
+/* Fix header title color */
+.site-title {
+    color: var(--atlas-heading) !important;
+}
+
+/* --- AUX LINKS (Header Buttons) --- */
+.aux-nav .aux-nav-list-item a {
+    background: transparent !important;
+    border: 1px solid var(--atlas-border) !important;
+    border-radius: 6px !important;
+    padding: 6px 14px !important;
+    font-size: 13px !important;
+    font-weight: 500 !important;
+    color: var(--atlas-text) !important;
+    transition: all 0.15s ease !important;
+    text-decoration: none !important;
+}
+
+.aux-nav .aux-nav-list-item a:hover {
+    background: var(--atlas-accent-light) !important;
+    border-color: var(--atlas-accent) !important;
+    color: var(--atlas-accent) !important;
+}
+
+/* Active language indicator */
+.aux-nav .aux-nav-list-item a.lang-active {
+    background: var(--atlas-accent) !important;
+    border-color: var(--atlas-accent) !important;
+    color: white !important;
+}
+
+/* --- SIDEBAR (Clean) --- */
 .site-nav {
     border-right: none !important;
 }
 
 .nav-list .nav-list-item .nav-list-link {
-    border-radius: 8px;
-    margin: 2px 0;
-    transition: all 0.2s ease;
+    border-radius: 6px;
+    margin: 2px 4px;
+    padding: 8px 12px;
+    transition: all 0.15s ease;
 }
 
-.nav-list .nav-list-item .nav-list-link:hover,
-.nav-list .nav-list-item .nav-list-link.active {
-    background-color: rgba(11, 106, 102, 0.1);
-    /* Subtle theme tint */
-    color: #0B6A66;
+.nav-list .nav-list-item .nav-list-link:hover {
+    background-color: var(--atlas-accent-light) !important;
+    color: var(--atlas-accent) !important;
     text-decoration: none !important;
-    background-image: none !important;
-    /* Remove default underline/bg */
 }
 
-/* --- BUTTONS --- */
-.btn {
-    border-radius: 50px !important;
-    /* Pill shape */
-    font-weight: 600;
-    transition: transform 0.1s ease;
+.nav-list .nav-list-item .nav-list-link.active {
+    background-color: var(--atlas-accent) !important;
+    color: white !important;
 }
 
-.btn:active {
-    transform: scale(0.98);
+/* --- SEARCH BAR --- */
+.search-input {
+    border: 1px solid var(--atlas-border) !important;
+    border-radius: 8px !important;
+    background: white !important;
 }
 
-/* --- LANGUAGE FILTERING (Hidden by default, JS toggles) --- */
+.search-input:focus {
+    border-color: var(--atlas-accent) !important;
+    box-shadow: 0 0 0 3px var(--atlas-accent-light) !important;
+}
+
+/* --- LINK PILLS (Hero Section) --- */
+.link-pill {
+    border: 1px solid var(--atlas-border) !important;
+    background: white !important;
+    color: var(--atlas-text) !important;
+    border-radius: 6px !important;
+    padding: 8px 16px !important;
+    font-weight: 500 !important;
+    transition: all 0.15s ease !important;
+}
+
+.link-pill:hover {
+    border-color: var(--atlas-accent) !important;
+    color: var(--atlas-accent) !important;
+    background: var(--atlas-accent-light) !important;
+}
+
+/* --- CARDS --- */
+.card {
+    border: 1px solid var(--atlas-border) !important;
+    border-radius: 10px !important;
+    transition: all 0.2s ease !important;
+}
+
+.card:hover {
+    border-color: var(--atlas-accent) !important;
+    box-shadow: 0 4px 12px rgba(139, 90, 43, 0.1) !important;
+    transform: translateY(-2px);
+}
+
+/* --- LANGUAGE FILTERING --- */
 .nav-list-item.lang-hidden {
     display: none !important;
+}
+
+/* --- LANGUAGE TOGGLE (Custom Component) --- */
+.lang-toggle {
+    display: inline-flex;
+    gap: 2px;
+    background: var(--atlas-bg);
+    border: 1px solid var(--atlas-border);
+    border-radius: 8px;
+    padding: 3px;
+    margin-right: 12px;
+}
+
+.lang-toggle a {
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--atlas-muted);
+    text-decoration: none;
+    transition: all 0.15s ease;
+}
+
+.lang-toggle a:hover {
+    color: var(--atlas-text);
+}
+
+.lang-toggle a.active {
+    background: white;
+    color: var(--atlas-heading);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
 }
