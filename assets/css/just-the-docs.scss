@@ -1,0 +1,178 @@
+---
+---
+@import "just-the-docs";
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;500;600&display=swap");
+
+:root {
+  --card-border: #e4dbcd;
+  --card-bg: #fffaf2;
+  --card-hover: #fff3de;
+  --hero-bg: radial-gradient(80% 120% at 100% 0%, rgba(11, 106, 102, 0.12) 0%, rgba(11, 106, 102, 0) 60%),
+    radial-gradient(120% 120% at 0% 0%, rgba(210, 130, 68, 0.18) 0%, rgba(210, 130, 68, 0) 50%);
+  --shadow-color: rgba(28, 22, 15, 0.12);
+}
+
+body {
+  font-family: "Source Sans 3", "IBM Plex Sans", sans-serif;
+  background: linear-gradient(180deg, #f6f2ea 0%, #fbf7f1 45%, #ffffff 100%);
+  color: #201b15;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.site-title {
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  letter-spacing: -0.01em;
+}
+
+.side-bar {
+  background: #efe9dd;
+  border-right: 1px solid #e1d7c7;
+}
+
+.site-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.nav-list .nav-list-link {
+  border-radius: 10px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.nav-list .nav-list-link:hover,
+.nav-list .nav-list-item.active > .nav-list-link {
+  background: #fff4e1;
+  color: #0b6a66;
+}
+
+.aux-nav a {
+  border: 1px solid #e1d7c7;
+  border-radius: 999px;
+  padding: 0.25rem 0.75rem;
+  background: #f9f3e9;
+}
+
+.aux-nav a:hover {
+  background: #fff4e1;
+  color: #0b6a66;
+}
+
+.search-input {
+  border-radius: 999px;
+  border: 1px solid #dbcdb8;
+  background: #fffdf8;
+  box-shadow: none;
+}
+
+.main-content {
+  background: #fffdf8;
+  border: 1px solid #e1d7c7;
+  border-radius: 18px;
+  box-shadow: 0 18px 40px var(--shadow-color);
+  margin: 1.5rem 1.25rem;
+  padding: 2rem 2.25rem;
+}
+
+@media (max-width: 50rem) {
+  .main-content {
+    margin: 1rem 0.75rem;
+    padding: 1.5rem 1.25rem;
+  }
+}
+
+.hero {
+  padding: 2rem;
+  border-radius: 20px;
+  background: var(--hero-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.hero__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #6f5a3b;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.card {
+  display: block;
+  padding: 1.25rem;
+  border-radius: 16px;
+  border: 1px solid var(--card-border);
+  background: var(--card-bg);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(23, 17, 12, 0.12);
+  background: var(--card-hover);
+}
+
+.card__title {
+  font-family: "Space Grotesk", "Avenir Next", sans-serif;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+}
+
+.card__desc {
+  font-size: 0.95rem;
+  color: #594c3f;
+}
+
+.section-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #6f5a3b;
+  margin-top: 2.5rem;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.75rem;
+}
+
+.link-pill {
+  padding: 0.35rem 0.8rem;
+  border-radius: 999px;
+  border: 1px solid #dbcdb8;
+  background: #f9f3e9;
+  text-decoration: none;
+  color: #2b241b;
+  font-size: 0.9rem;
+}
+
+.link-pill:hover {
+  background: #fff4e1;
+  color: #0b6a66;
+}
