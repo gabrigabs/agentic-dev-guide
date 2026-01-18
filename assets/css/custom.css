@@ -1,0 +1,59 @@
+/* assets/css/custom.css */
+
+/* --- TYPOGRAPHY --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+    letter-spacing: -0.01em;
+}
+
+/* --- HEADER (Glassmorphism) --- */
+.site-header {
+    background-color: rgba(11, 106, 102, 0.85) !important;
+    /* Theme color with opacity */
+    backdrop-filter: blur(12px) saturate(180%);
+    -webkit-backdrop-filter: blur(12px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+/* --- SIDEBAR (Premium Feel) --- */
+.site-nav {
+    border-right: none !important;
+}
+
+.nav-list .nav-list-item .nav-list-link {
+    border-radius: 8px;
+    margin: 2px 0;
+    transition: all 0.2s ease;
+}
+
+.nav-list .nav-list-item .nav-list-link:hover,
+.nav-list .nav-list-item .nav-list-link.active {
+    background-color: rgba(11, 106, 102, 0.1);
+    /* Subtle theme tint */
+    color: #0B6A66;
+    text-decoration: none !important;
+    background-image: none !important;
+    /* Remove default underline/bg */
+}
+
+/* --- BUTTONS --- */
+.btn {
+    border-radius: 50px !important;
+    /* Pill shape */
+    font-weight: 600;
+    transition: transform 0.1s ease;
+}
+
+.btn:active {
+    transform: scale(0.98);
+}
+
+/* --- LANGUAGE FILTERING (Hidden by default, JS toggles) --- */
+.nav-list-item.lang-hidden {
+    display: none !important;
+}

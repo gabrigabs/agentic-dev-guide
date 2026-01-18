@@ -1,0 +1,33 @@
+<link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
+
+<!-- assets/js/language-toggle.js -->
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        // 1. Determine Current Language
+        const path = window.location.pathname;
+        const isPt = path.includes("/pt/") || path.includes("/pt");
+        const currentLang = isPt ? "pt" : "en";
+
+        // 2. Filter Sidebar Items
+        const navItems = document.querySelectorAll('.nav-list-item');
+
+        navItems.forEach(item => {
+            const link = item.querySelector('.nav-list-link');
+            if (!link) return;
+
+            const href = link.getAttribute('href');
+
+            // Simple heuristic: if link contains /pt/, it's PT. If /en/, it's EN.
+            let itemLang = "common";
+            if (href && href.includes("/pt/") || href && href.includes("/pt")) itemLang = "pt";
+            else if (href && href.includes("/en/") || href && href.includes("/en")) itemLang = "en";
+
+            // Hide items not matching current language
+            if (currentLang === "pt" && itemLang === "en") {
+                item.classList.add('lang-hidden');
+            } else if (currentLang === "en" && itemLang === "pt") {
+                item.classList.add('lang-hidden');
+            }
+        });
+    });
+</script>
