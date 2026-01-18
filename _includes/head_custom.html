@@ -2,21 +2,24 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        // 1. Determine Current Language
         const path = window.location.pathname;
         const isPt = path.includes("/pt/") || path.endsWith("/pt");
         const currentLang = isPt ? "pt" : "en";
 
-        // Get baseurl from current path
         const pathParts = path.split('/');
-        const baseurl = '/' + pathParts[1]; // e.g., /agentic-dev-guide
+        const baseurl = '/' + pathParts[1];
 
-        // 2. Filter Sidebar Items
         const navItems = document.querySelectorAll('.nav-list-item');
         navItems.forEach(item => {
             const link = item.querySelector('.nav-list-link');
             if (!link) return;
             const href = link.getAttribute('href') || '';
+            const text = link.textContent.trim().toLowerCase();
+
+            if (text === 'english' || text === 'português') {
+                item.classList.add('lang-hidden');
+                return;
+            }
 
             let itemLang = "common";
             if (href.includes("/pt/") || href.endsWith("/pt")) itemLang = "pt";
@@ -29,10 +32,8 @@
             }
         });
 
-        // 3. Create Language Toggle in Header
         const auxNav = document.querySelector('.aux-nav-list');
         if (auxNav) {
-            // Create new toggle as first item
             const toggle = document.createElement('li');
             toggle.className = 'aux-nav-list-item lang-toggle-wrapper';
             toggle.innerHTML = `
