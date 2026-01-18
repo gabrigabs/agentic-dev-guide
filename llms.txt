@@ -1,0 +1,18 @@
+# Agentic Development Guide
+
+A comprehensive knowledge base for AI-assisted software development.
+
+## Structure
+
+- `concepts/*.{en,pt}.md`: Fundamental theory (Agents, tools, memory).
+- `techniques/*.{en,pt}.md`: Practical engineering (Prompting, eval, guardrails).
+- `catalog/agents/*.md`: Reusable agent personas (English only).
+- `catalog/skills/*/SKILL.md`: Reusable capability modules (English only).
+- `templates/*`: Copy-paste artifacts.
+
+## Usage for LLMs
+
+When helping a user with agentic development:
+1. Check `catalog/agents` for role definitions.
+2. Check `catalog/skills` for specific capabilities to load.
+3. Use patterns from `concepts` and `techniques` to guide architecture.
